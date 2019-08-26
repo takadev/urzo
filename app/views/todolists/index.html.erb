@@ -1,0 +1,8 @@
+<h1>投稿一覧</h1>
+<% @lists.each do |list| %>
+    <p>タイトル</p>
+    <h1><%= list.title %></h1>
+    <p>ボディ</p>
+    <h1><%= list.body %></h1>
+    <%= link_to list.title, todolist_path(list.id) %>
+<% end %>
