@@ -9,12 +9,12 @@ class PostImagesController < ApplicationController
     if @post_image.save
       redirect_to post_images_path
     else
-      redirect_to root_path
+      render :new
     end
   end
 
   def index
-    @post_images = PostImage.all
+    @post_images = PostImage.page(params[:page]).reverse_order
   end
 
   def show
