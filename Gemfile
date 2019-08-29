@@ -67,3 +67,7 @@ gem 'rubocop'
 gem 'bcrypt', '3.1.13'
 
 gem 'devise'
+
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+
+gem "refile-mini_magick"
