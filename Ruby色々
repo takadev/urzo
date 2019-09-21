@@ -1,0 +1,69 @@
+Ruby色々
+
+▼インスタンス変数
+@はインスタンス変数
+
+▼unless
+unlessはif文の逆
+
+unless 条件文 then
+	条件が偽のときに実行する処理
+end
+
+▼ActiveRecord
+includesは先読みしてキャッシュしてくれる。
+joinsはただのINNER JOIN。
+
+joins(:table)
+引数にテーブル名のシンボルが入る
+
+▼メソッド
+require: 指定した値が存在しなければ例外を出す
+permit: 変更を許可するパラメータを指定する
+
+
+▼.html.erbタグ
+・<% %>rubyのコードを実行するのみ
+・<%= %>rubyのコードを実行し、viewに出力
+
+
+▼form_with
+<%= form_with(model: Post.new) do |form| %>を、
+<%= form_with(model: Post.new, local: true) do |form| %> にするメリットは何なのでしょう？
+local: trueがない場合、Rails 5ではAjaxによる送信という意味になります。
+ふつうにHTMLとしてフォームを送信する場合にlocal:trueが必要となります。
+
+
+▼プルダウン作成
+<%= f.select カラム名, [["表示する文字”, "データベースに登録する値”],["表示する文字”, "データベースに登録する値”]] %>
+
+
+▼複数のパラメータを送りたい
+railsのrouteで
+```
+get 'post/:post_id/article/:id', to: 'コントローラ名#アクション'
+```
+こんな感じで書くかresourceを使う場合は
+
+```
+resource :post
+	resources :article
+```
+こんな感じで書く
+resourceの場合はネストさせる事でパラメータを追加できる
+
+
+▼resourceとresourcesの違い
+resources
+複数のリソースに対するCRUD処理を行うための
+ルーティングを生成する（7つのCRUDすべて）
+※リソース名がbooksなどの複数形になっていることにも注意
+
+resource
+resourceは、ただ1つのリソースに対するCRUD処理を行うための
+ルーティングを生成する。
+※リソース名がbookなどの単数形になっていることにも注意
+
+
+
+

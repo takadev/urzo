@@ -20,6 +20,8 @@ class PostImagesController < ApplicationController
   def show
     @post_image = PostImage.find(params[:id])
     @post_comment = PostComment.new
+    #@hour = [0..24]
+    @hour = (0..24)
   end
 
   private
