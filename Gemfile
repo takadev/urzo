@@ -79,3 +79,11 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
 end
+
+
+group :test do
+  gem "shoulda-matchers", require: false
+end
+
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'
